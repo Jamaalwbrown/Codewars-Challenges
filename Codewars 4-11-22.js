@@ -70,6 +70,7 @@ function factorial(n) {
   result = result.toFixed(2);
   return String(result);
   }
+}
   
 
 //----------CODEWARS BEST PRACTICES SOLUTION-------------////
