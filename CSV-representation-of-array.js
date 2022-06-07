@@ -31,6 +31,6 @@
 //Psuedocode:
    
 function toCsvText(array) {
-    // good luck
- } 
+    return array.join('\n');
+ }
 //----------BEST PRACTICES SOLUTION----------//
