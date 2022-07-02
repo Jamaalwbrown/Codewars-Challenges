@@ -22,7 +22,7 @@
 //-----------MY SOLUTION--------------//
 
 //PREP
-//Parameters: 
+//Parameters: An array of numbers
 
 //Return: 
 
