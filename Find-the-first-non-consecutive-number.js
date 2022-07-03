@@ -31,7 +31,7 @@
 //Examples: 
   
 //Psuedocode:
-
+dsfadsaf
 function firstNonConsecutive (arr) {
 
 }
