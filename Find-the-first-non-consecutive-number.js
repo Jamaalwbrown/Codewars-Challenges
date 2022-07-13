@@ -40,11 +40,29 @@
 ////firstNonConsecutive([x]) ----> null
 
 //Psuedocode:
+//1. Take the passed and check if its length is less than 2. This would indicate that its an empty array or only has one element
+//2. If array length is 2 or greater, then we'll iterate through the array starting at index 1
+//3. On each iteration we compare the current element and the previous element. We take the difference (current elem - previous elem)
+//4. If this difference is greater than 1 then we know we have found our nonconsecutive element
+//5. We will return that element from the function
+//6. If we keep iterating and get to the end of the array then we return null 
 
 function firstNonConsecutive (arr) {
-
-}
-   
-  
-//----------BEST PRACTICES SOLUTION----------//
+    if(arr.length < 2) {
+          return null
+      }
+    
+    let result = null;
+      for (let i = 1; i < arr.length; i++){
+          console.log(arr[i]);
+          if ((arr[i] - arr[i - 1]) > 1) {
+              result = arr[i];
+              console.log(result);
+              break;
+          }
+        }
+    
+    console.log('All elements are consecutive');
+    return result;
+  }
 
