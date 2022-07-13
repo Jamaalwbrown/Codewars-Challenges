@@ -22,15 +22,25 @@
 //-----------MY SOLUTION--------------//
 
 //PREP
-//Parameters: An array of numbers
+//Parameters: 
+//An array of numbers. Array will have at least 2 numbers. Numbers will be unique and ascending order. 
 
 //Return: 
+//First element of array passed that is non consecutive
+//If whole array is consecutive then return null
 
 //Constraints: 
+//Numbers in the passed array could be positive or negative and the first non-consecutive number could be either as well
+//Not consecutive means not exactly one larger than the previous element of the array
  
 //Examples: 
-  
+//firstNonConsecutive([1,2,3,4,6,7,8]) ----> 6
+//firstNonConsecutive([-1,2,3,4,6,7,8]) ----> 2
+//firstNonConsecutive([]) ----> null
+////firstNonConsecutive([x]) ----> null
+
 //Psuedocode:
+
 function firstNonConsecutive (arr) {
 
 }
