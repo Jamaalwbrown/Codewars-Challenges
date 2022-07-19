@@ -7,3 +7,16 @@
 //moveZeros([1,2,0,1,0,1,0,3,0,1]), [1, 2, 1, 1, 3, 1, 0, 0, 0, 0])
 
 //Psuedocode: iterate over the starting array an identify the zeros. We could take the existing zeros and move them to the end of the array or we could count the zeros, remove them, then append the correct number of zeros to the end of the array
+
+//proposed solution - iterate through the original array and assign each value to a new array bucket depending on if zero or not. Join the buckets together and output
+
+function moveZeros (array) {
+    let catchall = []
+    let zeros = []
+    for (let i=0; i < array.length; i++) {
+        array[i] === 0 ? zeros.push(array[i]) : catchall.push(array[i])
+    }
+    console.log(...catchall,...zeros);
+}
+
+moveZeros([1,2,0,1,0,1,0,3,0,1]);
