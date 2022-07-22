@@ -16,7 +16,7 @@ function moveZeros (array) {
     for (let i=0; i < array.length; i++) {
         array[i] === 0 ? zeros.push(array[i]) : catchall.push(array[i])
     }
-    console.log(...catchall,...zeros); //could replace console log with return here
+    console.log(...catchall,...zeros); //could replace console log with return here to solve the problem
 }
 
 moveZeros([1,2,0,1,0,1,0,3,0,1]);
