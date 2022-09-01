@@ -1,22 +1,55 @@
+/*
+You get any card as an argument. Your task is to return the suit of this card (in lowercase).
+
+Our deck (is preloaded):
+
+('3♣') -> return 'clubs'
+('3♦') -> return 'diamonds'
+('3♥') -> return 'hearts'
+('3♠') -> return 'spades'
+*/
+
 //-----------MY SOLUTION--------------//
 
-//PREP
+/*PREP
 //Parameters: 
-// What are they giving me? What are the expected arguments? Will it only ever be one type of data, or do I need to account for others? 
-// Will there ever be an invalid input? Do I need to account for unexpected edge cases?
+We are given a string which will hold the value of a playing card (number and suit)
+Will the suit always be the second character in the string? Will the suit and number change places in the string?
 
-//Return: 
-// What do they want me to return? Are they expecting a string? array? object? Is there a certain format the return is expected in? 
-// Will the expected return ever change for invalid inputs or edge cases?
+
+//Return:
+We need to return the suit that the card is a part of. Return will be the value of a string. Suit will be passed in as an argument to the function
+What do we return if we are given an empty string
 
 //Examples: 
-// Check your understanding! Are tests provided that you can reference as examples? What would happen in invalid or edge situations? 
-// Aim for at least 3 examples.
-  
+defineSuit('Q♠')-----> 'spades'
+defineSuit('9♦')-----> 'diamonds'
+defineSuit('J♥')-----> 'hearts'
+
 //Psuedocode:
-// In fairly plain speech, how would you solve this? What needs to happen to get from the starting inputs to the desired return? 
-// Think it through step by step, if you write something down and it is more than a single action, you may need to break it down more. 
-// Good pseudocode only comes with practice.
-   
+Look at the string that is passed into the function.
+If it is empty, return null
+If the string has contents then we look at the second character of the string.
+Depending on the suit that is there we return one of the expected outputs using conditional logic
+*/ 
   
-//----------BEST PRACTICES SOLUTION----------//
+function defineSuit(card) {
+    if (card.length === 0) {
+        return null;
+    }
+
+    switch (card.slice(-1)) {
+        case '♣':
+            return 'clubs';
+        case '♦':
+            return 'diamonds';
+        case '♥':
+            return 'hearts';
+        case '♠':
+            return 'spades';
+        default:
+            return null
+    }
+  }
+
+ 
