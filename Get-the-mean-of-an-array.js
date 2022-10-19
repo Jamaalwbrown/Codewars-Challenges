@@ -8,13 +8,15 @@ The array will never be empty.
 
 //getAverage([2,2,2,2])
 
-function getAverage(arr){
-    //loop through the array to get sum
-    let sum = arr.reduce((a,c) => a + c)
-    //avg -> sum / arr.length
-    //return
-    return sum / arr.length
-  }
+// function getAverage(arr){
+//     //loop through the array to get sum
+//     return Math.floor( arr.reduce((a,c) => a + c) / arr.length)
+//     let sum = arr.reduce((a,c) => a + c)
+//     //avg -> sum / arr.length
+//     //return
+//   }
+
+  const getAverage = arr => Math.floor(arr.reduce((a,c) => a + c) / arr.length)
 
   console.log(getAverage([2,2,2,2]),2);
   console.log(getAverage([1,2,3,4,5,]),3);
