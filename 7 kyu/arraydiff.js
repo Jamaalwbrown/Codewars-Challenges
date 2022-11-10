@@ -7,7 +7,9 @@ arrayDiff([1,2],[1]) == [2]
 If a value is present in b, all of its occurrences must be removed from the other:
 
 arrayDiff([1,2,2,2,3],[2]) == [1,3]
+*/
 
+/*
 Parameters: 
 -We are given two lists. Data structure is an array. One list named a and the other is named b
 -Examples given are a list of numbers
@@ -34,33 +36,42 @@ Pseudocode:
 -If number is not in b then we retain that value or skip
 -We can store this in a resultant array if needs and return it
 
- */ 
+ */
 
+
+// Old Solution
+// function arrayDiff(a, b) {
+//   if (a.length === 0) {
+//     return []
+//   }
+
+//   if (a.length !== 0 && b.length === 0) {
+//     return a
+//   }
+
+//   result = a.filter((num, index, arr) => {
+
+//     //We check if the current element in list a is in list b by checking the what indexOf evaluates to. If it -1 then we know the element is not in b. Else the element is in b
+//     if (b.indexOf(num) !== -1) {
+//       //If element is in b then we return false and filter out the that num from a
+//       return false
+//     }
+//     else {
+//       //if element is not in b then we skip or retain that element in our array
+//       return true
+//     }
+//   })
+
+//   return result;
+// }
+
+
+//Better and faster solution. Using a set instead of normal arrays provides sublinear time complexity.
 function arrayDiff(a, b) {
-    if (a.length === 0) {
-      return []
-    }
-  
-    if (a.length !== 0 && b.length === 0) {
-      return a
-    }
-  
-    result = a.filter((num, index, arr) => {
-  
-      //We check if the current element in list a is in list b by checking the what indexOf evaluates to. If it -1 then we know the element is not in b. Else the element is in b
-      if (b.indexOf(num) !== -1) {
-        //If element is in b then we return false and filter out the that num from a
-        return false
-      }
-      else {
-        //if element is not in b then we skip or retain that element in our array
-        return true
-      }
-    })
-  
-    return result;
-  }
-  
-  console.log(arrayDiff([1,2],[1]), [2])
-  console.log(arrayDiff([1,2,2,2,3],[2]), [1,3])
-  console.log(arrayDiff([1,2,2], [2]), [1])
+  let newSet = new Set(b)
+  return a.filter(n => !newSet.has(n) )
+}
+
+console.log(arrayDiff([1,2],[1]), [2])
+console.log(arrayDiff([1,2,2,2,3],[2]), [1,3])
+console.log(arrayDiff([1,2,2], [2]), [1])
