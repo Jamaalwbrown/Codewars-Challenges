@@ -35,35 +35,44 @@ On each iteration we check if the number is odd
    
 */
 
-function sortArray(array) {
-    if (array.length === 0) {
-        return [];
-    }
+// function sortArray(array) {
+//     if (array.length === 0) {
+//         return [];
+//     }
 
-    //create resultant array for use later
-    const resultArr = []
+//     //create resultant array for use later
+//     const resultArr = []
 
-    //Building our sorted odd array
-    const oddArr = array.filter(number => number % 2 !== 0);
-    oddArr.sort((a, b) => a - b);
+//     //Building our sorted odd array
+//     const oddArr = array.filter(number => number % 2 !== 0);
+//     oddArr.sort((a, b) => a - b);
 
 
-    //iterate through array, copy value directly into result array if even, copy sorted odd value into result array if odd
-    let j = 0;
-    for (let i=0; i < array.length; i++) {
-        if(array[i] % 2 !== 0) {
-            resultArr[i] = oddArr[j];
-            j++
-        }
-        else {
-            resultArr[i] = array[i];
-        }
-    }
+//     //iterate through array, copy value directly into result array if even, copy sorted odd value into result array if odd
+//     let j = 0;
+//     for (let i=0; i < array.length; i++) {
+//         if(array[i] % 2 !== 0) {
+//             resultArr[i] = oddArr[j];
+//             j++
+//         }
+//         else {
+//             resultArr[i] = array[i];
+//         }
+//     }
 
-    // Return a sorted array.
-    return resultArr;
-}  
+//     // Return a sorted array.
+//     return resultArr;
+// }  
 
-console.log(sortArray([7, 1]));
-console.log(sortArray([5, 8, 6, 3, 4]));
-console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
+// Updated with a more optimized solution. It sorts the array in descending order and uses the pop method to reduce time complexity
+
+function sortArray(arr){
+    //filter -> sort
+    const oddNums = arr.filter(n => n % 2 !== 0).sort((a,b)=>b-a)
+    //console.log(oddNums)
+    //map
+    return arr.map(n => n % 2 === 0 ? n : oddNums.pop())
+  }
+  console.log(sortArray([7, 1]),'[1,7]')
+  console.log(sortArray([5, 8, 6, 3, 4]),'[3, 8, 6, 5, 4]')
+  console.log(sortArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]), '[1, 8, 3, 6, 5, 4, 7, 2, 9, 0');
