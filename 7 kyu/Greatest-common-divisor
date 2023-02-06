@@ -3,13 +3,17 @@
 The inputs x and y are always greater or equal to 1, so the greatest common divisor will always be an integer that is also greater or equal to 1. */
 
 function mygcd(x, y) {
-  for(let i = Math.min(x,y); i > 0; i--) {
-    if(x % i === 0 && y % i === 0) {
-      return i
+
+    //Here we create a loop and take the lower number of the two parameters and use that number as our starting point. We then will count down from that number on every loop until we get to 1. That is because the greatest common denominator can't be higher than the lower of the two numbers. It must be the lower of the two numbers or less 
+    for(let i = Math.min(x,y); i > 0; i--) {
+  
+      //Check if the number (i) can divide evenly into both parameters. If so return i
+      if(x % i === 0 && y % i === 0) {
+        return i
+      }
     }
   }
-}
-
-console.log(mygcd(30,12),6)
-console.log(mygcd(8,9),1)
-console.log(mygcd(1,1),1)
+  
+  console.log(mygcd(30,12),6)
+  console.log(mygcd(8,9),1)
+  console.log(mygcd(1,1),1)
